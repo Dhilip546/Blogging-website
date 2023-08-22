@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 5px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 50%;
+  }
+}
+.overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        /* Styles for the popup form */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        /* Styles for the form content */
+        .content {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Styles for form labels */
+        label {
+            font-weight: bold;
+        }
+
+        /* Styles for form inputs */
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        /* Styles for the submit button */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Styles for the cancel button */
+        #closeFormButton {
+            background-color: #ccc;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Hover effect for buttons */
+        input[type="submit"]:hover, #closeFormButton:hover {
+            background-color: #45a049;
+        }
+.container {
+            
+            max-width: 800px;
+            margin: 0 ;
+            padding: 20px;
+        }
+.blog {
+            
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+  .fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+ /* Style for the button */
+ #openFormButton {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Hover effect */
+        #openFormButton:hover {
+            background-color: #45a049;
+        }
+
+        
+</style>
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<h1>BLOGGER'S</h1>
+<hr>
+
+<h2>
+"Connecting Minds, Sharing Stories: Your Journey Through Our Blogging Network"</h2>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column" id="Column">
+    <div class="content">
+      <img src="https://static.vecteezy.com/system/resources/previews/022/448/291/original/save-earth-day-poster-environment-day-nature-green-ai-generative-glossy-background-images-tree-and-water-free-photo.jpg" alt="Mountains" style="width:100%">
+      <h3>Nature and World</h3>
+      <p>Nature isn't just a passive entity—it actively shapes and sustains the world around us. From the air we breathe to the water we drink, nature's intricate balance provides the foundation for all life.</p>
+    </div>
+  </div>
+  <div class="column" id ="Column">
+    <div class="content">
+    <img src="https://static.toiimg.com/photo/msid-101864636/101864636.jpg" alt="Lights" style="width:100%">
+      <h3>AI</h3>
+      <p>In the modern world, data is a currency of knowledge. AI's capacity to analyze vast amounts of information offers new perspectives on the interconnectedness of nature and the world.</p>
+    </div>
+  </div>
+  <div class="column" id="Column">
+    <div class="content">
+    <img src="https://techmonitor.ai/wp-content/uploads/sites/4/2017/02/shutterstock_552493561.webp" alt="Nature" style="width:100%">
+      <h3>Google</h3>
+      <p>In the vast expanse of the digital age, Google stands as a gateway to information, connection, and exploration. But its influence doesn't stop at the digital realm—it extends into the very heart of nature and the world. </p>
+    </div>
+  </div>
+  <div class="column" id="Column">
+    <div class="content">
+    <img src="https://thetravelbible.com/wp-content/uploads/2020/04/Solo-Travel-in-Nature-acbfea52bfaf.jpg" alt="Mountains" style="width:100%">
+      <h3>Travelling</h3>
+      <p>"Roaming Beyond Boundaries: Embarking on a Journey of Discovery with Nature and World Travelling".Traveling isn't just about exploration—it's a catalyst for personal growth and global awareness.</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+</div>
+</div>
+<div class="card">
+  <img src="https://i.ytimg.com/vi/-3hU2aiYnAA/maxresdefault.jpg" alt="Bear" style="width:80%">
+  <h3>Indian Mission to Moon</h3>
+  <p>Chandrayaan 3 isn't just about scientific breakthroughs—it's also a beacon of inspiration for aspiring scientists, engineers, and dreamers. We'll delve into the mission's educational and outreach initiatives, discussing how it ignites a passion for space exploration and science among the youth.
+    As Chandrayaan 3 embarks on its journey to the moon, it carries with it the aspirations of a nation and the dreams of the global space community. Through its endeavors, we are reminded that exploration isn't solely about reaching new destinations; it's about pushing the boundaries of human knowledge, fostering innovation, and sparking a sense of wonder that transcends the limits of our world.
+    
+    Feel free to adapt and tailor this content to align with your blogging network's focus on Chandrayaan 3 and its significance in the realm of lunar exploration.
+    </p>
+  
+</div>
+<div class="container" id="blogsContainer">
+    <!-- Example initial blogs -->
+<div class="blog">
+        <h3>John Doe</h3>
+        <h4>Generative AI</h4>
+        <p>Generative artificial intelligence (AI) is artificial intelligence capable of generating text, images, or other media, using generative models. Generative AI models learn the patterns and structure of their input training data and then generate new data that has similar characteristics.</p>
+    </div>
+</div>
+
+<!-- END MAIN -->
+
+    <!-- ... Your existing content here ... -->
+    <!-- Add the Post button -->
+    <h2>Post your Blog Here...</h2>
+    <button id="openFormButton">Create New Blog</button>
+    <!-- ... Your existing content here ... -->
+  
+  
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popupForm">
+    <!-- Your existing popup form content here ... -->
+
+
+  <h2>Create New Blog</h2>
+  <form id="blogForm" class="content">
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" required><br><br>
+    
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required><br><br>
+    
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="5" cols="30" required></textarea><br><br>
+    
+    <input type="submit" value="Submit Blog">
+  </form>
+  <button id="closeFormButton">Cancel</button>
+
+</div>
+</div>
+
+<script>
+    /* ... Your existing script ... */
+    const openFormButton = document.getElementById("openFormButton");
+        const closeFormButton = document.getElementById("closeFormButton");
+        const overlay = document.getElementById("overlay");
+        const popupForm = document.getElementById("popupForm");
+        const blogForm = document.getElementById("blogForm");
+        const blogsContainer = document.getElementById("blogsContainer");
+
+        openFormButton.addEventListener("click", function() {
+            popupForm.style.display = "block";
+            overlay.style.display = "block";
+        });
+
+        closeFormButton.addEventListener("click", function() {
+            popupForm.style.display = "none";
+            overlay.style.display = "none";
+        });
+
+        blogForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const author = document.getElementById("author").value;
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+
+            const blogDiv = document.createElement("div");
+            blogDiv.className = "blog";
+            blogDiv.innerHTML = `
+                <h3>${author}</h3>
+                <h4>${title}</h4>
+                <p>${content}</p>
+            `;
+
+            blogsContainer.appendChild(blogDiv);
+
+            // Clear form fields
+            document.getElementById("author").value = "";
+            document.getElementById("title").value = "";
+            document.getElementById("content").value = "";
+
+            popupForm.style.display = "none";
+            overlay.style.display = "none";
+        });
+    </script>
+    </body>
+    </html>
